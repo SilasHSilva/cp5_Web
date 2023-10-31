@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Menu from "../components/menu"
-import { CenteredDiv, InformacoesCep, TitlePage } from "../styles/styles"
+import { InformacoesCep, TitlePage } from "../styles/styles"
 import axios from "axios"
 
 

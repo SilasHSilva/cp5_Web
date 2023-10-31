@@ -9,16 +9,16 @@ import Veganismo from "./pages/veganismo";
 import { Container, Button} from "./styles/styles";
 
 function App() {
-  const[theme,setTheme] = useState('light')
+   const[theme,setTheme] = useState('light')
 
-  const mudarTheme = () => {
+    const mudarTheme = () => {
     setTheme(mudar => mudar === 'light' ? 'dark' : 'light')
   }
 
   return (
     <>
+    <Button onClick={mudarTheme}><img src="./lampada.png" alt="" width={20} height={20} /></Button>
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <hr/>
       <Container>
       <BrowserRouter>
         <Routes>
@@ -29,7 +29,6 @@ function App() {
         </Routes>
       </BrowserRouter>
       </Container>
-      <Button onClick={mudarTheme}><img src="./lampada.png" alt="" width={20} height={20} /></Button>
       </ThemeProvider>
       </>
   );

@@ -1,14 +1,15 @@
 import Menu from '../components/menu'
-import { Title } from '../styles/styles';
+import { Image, Title, ContainerImg } from '../styles/styles';
 
 function Home() {
     return (
         <>
             <Menu />
-            <hr />
-            <Title>Este site tem por função mostrar alguns beneficios e maleficios do Veganismo</Title>
+            <ContainerImg>
+                <Title>Este site tem por função mostrar resumidamente o que significa o veganismo</Title>
+                <Image src='./frutas.jpg' alt='' />
+            </ContainerImg>
         </>
     )
 }
-
 export default Home;

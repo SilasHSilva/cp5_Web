@@ -1,9 +1,9 @@
-import { link, menu } from "../styles/styles";
+import { link, menu} from "../styles/styles";
 
 function Menu() {
 
     return (
-        <>
+        <>  
             <nav style={menu}>
                 <ul style={{ display: 'flex', listStyle: 'none' }}>
                     <li><a href="/" style={link}>HOME</a>  </li>

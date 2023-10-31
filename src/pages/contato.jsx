@@ -1,6 +1,6 @@
 import { useState } from "react"
-import  Menu  from "../components/menu"
-import { InformacoesCep, TitlePage } from "../styles/styles"
+import Menu from "../components/menu"
+import { CenteredDiv, InformacoesCep, TitlePage } from "../styles/styles"
 import axios from "axios"
 
 
@@ -15,7 +15,7 @@ function Contato() {
     function handleCepChange(e) {
         setCep(e.target.value)
     }
-    
+
     function pesquisaCep() {
         //usar AXIOS: manipular o Get
         axios
@@ -42,22 +42,32 @@ function Contato() {
     return (
         <>
             <Menu />
-            <TitlePage>Buscador de endereço pelo Cep</TitlePage>
-            <input type="text" placeholder="Digite um cep" value={cep} onChange={handleCepChange}></input>
-            <button onClick={pesquisaCep}>Pesquisar</button>
-            {error && <p>{error}</p>}
-            {data.cep && (
-                <InformacoesCep>
-                    <p>CEP: {data.cep}</p>
-                    <p>Logradouro: {data.logradouro}</p>
-                    <p>Complemento: {data.complemento}</p>
-                    <p>Bairro: {data.bairro}</p>
-                    <p>UF: {data.uf}</p>
-                    <p>DDD: {data.ddd}</p>
-                </InformacoesCep>
-            )
-            }
-
+            <InformacoesCep>
+                <TitlePage>Para recebimento de algumas receitas veganas</TitlePage>
+                <p>Nome</p>
+                <input type="text" placeholder="Nome" />
+                <p>Sobrenome</p>
+                <input type="text" placeholder="Sobrenome" />
+                <p>Telefone</p>
+                <input type="tel" placeholder="Telefone" />
+                <p>Email</p>
+                <input type="email" placeholder="Email" />
+                <TitlePage>Caso queira receber um guia físico exclusivo digite seu CEP para enviarmos a sua residência </TitlePage>
+                <input type="text" placeholder="Digite seu CEP" value={cep} onChange={handleCepChange}></input>
+                <button onClick={pesquisaCep}>Pesquisar</button>
+                {error && <p>{error}</p>}
+                {data.cep && (
+                    <InformacoesCep>
+                        <p>CEP: {data.cep}</p>
+                        <p>Logradouro: {data.logradouro}</p>
+                        <p>Complemento: {data.complemento}</p>
+                        <p>Bairro: {data.bairro}</p>
+                        <p>UF: {data.uf}</p>
+                        <p>DDD: {data.ddd}</p>
+                    </InformacoesCep>
+                )
+                }
+            </InformacoesCep>
         </>
     )
 }
